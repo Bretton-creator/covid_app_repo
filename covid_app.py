@@ -56,7 +56,7 @@ st.write("""
 ## Recovered Cases
 """)
 
-recovered_df = pd.read_csv('time_series_covid_19_deaths.csv')
+recovered_df = pd.read_csv('time_series_covid_19_recovered.csv')
 recovered_df = recovered_df.drop(columns=["Province/State", "Lat", "Long"])
 recovered_df = recovered_df.groupby("Country/Region").aggregate(np.sum).T
 recovered_df.index.name = "Date"
